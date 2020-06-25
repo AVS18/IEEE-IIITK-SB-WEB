@@ -1,0 +1,147 @@
+.header{
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+}
+
+.heading {
+    clear: both;
+    font-size: 3em;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 15px;
+    text-align: center;
+    color: #002366;
+  }
+.iiitklogo{
+    width:250px;
+    height:120px;
+}
+.ieeelogo{
+    width:250px;
+    height: 120px;
+    float: right;
+}
+.heading .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+@media (max-width: 700px) {
+   .ieeelogo{
+    width:125px;
+    height: 60px;
+    float: right;
+   }
+   .iiitklogo{
+    width:125px;
+    height: 60px;   
+   }
+}
+a{
+    font-size: 1.5em;
+    font-family: "Open Sans" sans-serif;
+}
+.introcolumn {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .introrow:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .introcolumn {
+      width: 100%;
+    }
+  }
+  
+.container .introrow .introcolumn .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .container .introrow .introcolumn .parent .image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 300px;
+    animation-name: slideimage;
+    animation-duration: 2s;
+  }
+  .container .introrow .introcolumn .parent .image2 {
+    position: absolute;
+    top: 200px;
+    left: 170px;
+    width: 350px;
+    height: 300px;
+    animation-name: slideimage2;
+    animation-duration: 2s;
+  }
+@media (max-width: 700px){
+    .container .introrow .introcolumn .parent .image1 {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 170px;
+        height: 150px;
+        animation-name: slideimage;
+        animation-duration: 2s;
+      }
+      .container .introrow .introcolumn .parent .image2 {
+        position: absolute;
+        top: 170px;
+        left: 0;
+        width: 170px;
+        height: 150px;
+        animation-name: slideimage2;
+        animation-duration: 2s;
+      } 
+}
+  @keyframes slideimage{
+      from {left: -100%;}
+      to {left: 0%;}
+  }
+  @keyframes slideimage2{
+    from {left: -100%;}
+    to {left: 170px; display: block;}
+  }
+
+  .container .introrow .introcolumn .welcome {
+    font-family: Tahoma, sans-serif;
+    top: 0%;
+    color: green;
+    animation-name: intro;
+    animation-duration: 2s;
+}
+
+@keyframes intro{
+    from{top: -100%;}
+    to{top: 0%;}
+}
+.container .introrow .introcolumn .welcome h2 {
+    font-weight: 200;
+    color: #1F1F1F;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 9;
+    padding-bottom: 9px;
+  }
+  
+.container .introrow .introcolumn .welcome h2:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 80px;
+    background: #5DB2FF;
+  }
+  
