@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/home_events.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+</head>
+<body>
+  <div class="header" style="height: auto; padding-bottom:0px;">
+    <div class="row">
+          <div class="col-sm-3">
+            <img src="images/iiitk.png" class="iiitklogo">
+          </div>
+          <div class="col-sm-6">
+            <div class="row heading">
+              <p>&emsp;&nbsp;&nbsp;IEEE&nbsp;Student&nbsp;Branch</p>
+            </div>
+            <div class="row heading1">
+              <p>&emsp;&emsp;&emsp;IIIT&nbsp;Kottayam</p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <img src="images/ieee.png" class="ieeelogo">
+          </div>
+    </div>
+  <hr width="100%">
+</div>
+<div class="container">
+    <div class="introrow">
+        <h2>Event Name</h2>
+        <div class="introcolumn">
+            <p>Some Details about the Event:</p><br>
+                May be two to three paragraphs describing the event. <br>
+                1st paragraph: abstract (Introduction)<br>
+                2nd Paragraph: what we will cover?<br>
+            
+        </div>
+        <div class="introcolumn">
+            Event Pic
+            <img src="images/Iot for Agriculture.png">
+            
+        </div>
+    </div>
+</div>
+<div class="container webinardata">
+    <div class="introrow">
+        <div class="introcolumn">
+            <table>
+                <tr><h2>Webinar Instructor Details</h2></tr>
+                <tr><td>Photo and Name</td></tr>
+                <tr><td>Designation</td></tr>
+                <tr><td>Working at</td></tr>
+                <tr><td>Field He worked</td></tr>
+                <tr><td>If available Contact details as this depends on that instructor</td></tr>
+                <tr><td>Email ID</td></tr>
+                <tr><td>Any thing special to mention</td></tr>
+            </table>
+        </div>
+        <div class="introcolumn">
+            <table>
+                <tr><h2>Some General Info</h2></tr>
+                <tr><td>Intended Audience</td></tr>
+                <tr><td>Event Timings</td></tr>
+                <tr><td>Event Price</td></tr>
+                <tr><td>Event Type</td></tr>
+                <tr><td>Event Sponsors</td></tr>
+                <tr><td>Contact Person</td></tr>
+                <tr><td>Email ID</td></tr>
+            </table>
+        </div>    
+    </div>
+</div>
+<div class="container">
+    <h2>Some General Instructions</h2>
+    1. Kindly turn off your video camera during the session<br>
+    2. Our volunteers will assist you in meanwhile<br>
+    3. Kindly note down the registration id obtained after the registration.<br>
+    4. Link for certification of participation will be sent to your respective email id's once the event is completed<br>
+</div>
+<div class="container">
+    <h2>Declaration</h2>
+    <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+
+        <input type="checkbox" name="checkbox" value="check" id="agree" style="width:20px;height:20px;border-color:blue;"  /><p>I compeletely read all the details about this event and willing to participate in this. I agree that any violation in the rules can led me to remove from this webinar and the IEEE SB IIITKottayam team has complete athority and their decision is final</p>
+        <input type="submit" class="btn btn-outline-primary"  value="submit" />
+        
+    </form>
+</div>
+<br>
+<br>
+<div class="footer">
+  <p>This site is designed by IEEE SB - IIIT Kottayam.  &#xa9; All Rights Reserved.</p>
+
+</div>
+
+<script>
+var textWrapper = document.querySelector('.heading');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.heading .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 1500,
+    delay: (el, i) => 70*i
+  });
+  var textWrapper = document.querySelector('.heading1');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  
+  anime.timeline({loop: false})
+    .add({
+      targets: '.heading1 .letter',
+      scale: [4,1],
+      opacity: [0,1],
+      translateZ: 0,
+      easing: "easeOutExpo",
+      duration: 1500,
+      delay: (el, i) => 70*i
+    });
+
+</script>
+
+</body>
+</html>

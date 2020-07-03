@@ -3,15 +3,27 @@
     text-align: left;
     padding: 20px;
 }
-
-.heading {
+.body{
+  font-family: Tahoma, sans-serif;
+  font-size: 1.8em;
+}
+.heading{
     clear: both;
     font-size: 3em;
     font-family: 'Open Sans', sans-serif;
-    margin-top: 15px;
+    margin-top: 3%;
     text-align: center;
     color: #002366;
   }
+.heading1 {
+    clear: both;
+    font-size: 3em;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 3%;
+    text-align: center;
+    color: #002366;
+  }
+
 .iiitklogo{
     width:250px;
     height:120px;
@@ -25,6 +37,11 @@
     display: inline-block;
     line-height: 1em;
   }
+.heading1 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
 
 @media (max-width: 700px) {
    .ieeelogo{
@@ -36,20 +53,24 @@
     width:125px;
     height: 60px;   
    }
+   .heading,.heading1{
+     font-size: 2em;
+
+   }
 }
 a{
     font-size: 1.5em;
     font-family: "Open Sans" sans-serif;
 }
+.introrow{
+  height: 600px;
+}
 .introcolumn {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
   }
-  
-  /* Clear floats after the columns */
-  .introrow:after {
+.introrow:after {
     content: "";
     display: table;
     clear: both;
@@ -62,71 +83,75 @@ a{
     }
   }
   
-.container .introrow .introcolumn .parent {
+ .parent {
     position: relative;
     top: 0;
     left: 0;
   }
-  .container .introrow .introcolumn .parent .image1 {
+ .image1 {
     position: relative;
     top: 0;
     left: 0;
-    width: 350px;
-    height: 300px;
     animation-name: slideimage;
     animation-duration: 2s;
   }
-  .container .introrow .introcolumn .parent .image2 {
+ .image2 {
     position: absolute;
     top: 200px;
     left: 170px;
-    width: 350px;
-    height: 300px;
     animation-name: slideimage2;
     animation-duration: 2s;
   }
 @media (max-width: 700px){
-    .container .introrow .introcolumn .parent .image1 {
+      .image1 {
         position: relative;
         top: 0;
         left: 0;
-        width: 170px;
-        height: 150px;
         animation-name: slideimage;
         animation-duration: 2s;
       }
-      .container .introrow .introcolumn .parent .image2 {
+      .image2 {
         position: absolute;
-        top: 170px;
+        top: 300px;
         left: 0;
-        width: 170px;
-        height: 150px;
         animation-name: slideimage2;
         animation-duration: 2s;
       } 
+      .welcomearea{
+        margin-top: 300px;
+      }
+      .introrow{
+        height: 1400px;
+      }
 }
-  @keyframes slideimage{
+@keyframes slideimage{
       from {left: -100%;}
       to {left: 0%;}
   }
-  @keyframes slideimage2{
+@keyframes slideimage2{
     from {left: -100%;}
     to {left: 170px; display: block;}
   }
 
-  .container .introrow .introcolumn .welcome {
-    font-family: Tahoma, sans-serif;
-    top: 0%;
-    color: green;
-    animation-name: intro;
-    animation-duration: 2s;
+
+ .welcome {
+  position: absolute;
+  font-family: Tahoma, sans-serif;
+  animation-name: intro;
+  animation-duration: 2s;
+}
+.welcome p{
+  position: absolute;
+  width: inherit;
+  text-align: justify;
+  font-size: 1.2em;
 }
 
 @keyframes intro{
-    from{top: -100%;}
-    to{top: 0%;}
+  from{right: -100%}
+  to{right: 10%;}
 }
-.container .introrow .introcolumn .welcome h2 {
+  .welcome h2 {
     font-weight: 200;
     color: #1F1F1F;
     margin-bottom: 40px;
@@ -135,13 +160,315 @@ a{
     padding-bottom: 9px;
   }
   
-.container .introrow .introcolumn .welcome h2:before {
+ .welcome h2:before {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     height: 2px;
-    width: 80px;
+    width: 280px;
     background: #5DB2FF;
   }
+   .vision
+  {
+    align-content: center;
+    animation-name: slideimage;
+    animation-duration: 2s;
+    position: relative;
+  }
+   .mission
+  {
+    align-content: center;
+    animation-name: slideimage;
+    animation-duration: 2s;
+    position: relative;
+  }
+
+.mvrow h2{
+    font-weight: 200;
+    color: #002366;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 9;
+    padding-bottom: 9px;
+    text-align: center;
+    animation-name: slideimage;
+    animation-duration: 2s;
+  }
   
+.mvrow h2:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 150px;
+    background: #5DB2FF;
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+  }
+.mvcolumn {
+    float: left;
+    width: 50%;
+    padding: 10px;;
+  }
+.mvrow{
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  height: 600px;
+}
+.mvrow:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .mvcolumn {
+      width: 100%;
+    }
+        
+  }
+.vision p, .mission p{
+    position: absolute;
+    width: inherit;
+    text-align: justify;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+.mimage:hover, .vimage:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 700px) {
+  .mvrow{
+    height: 900px;
+  }
+  .mission{
+    margin-top: 250px;
+  }   
+}
+.teamrow h2{
+  font-weight: 200;
+  color: #002366;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9;
+  padding-bottom: 9px;
+  text-align: center;
+  animation-name: slideimage;
+  animation-duration: 2s;
+}
+
+.teamrow h2:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 150px;
+  background: #5DB2FF;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+}
+.teamcolumn {
+  height: 500px;
+  float: left;
+  width: 25%;
+  padding: 10px;
+  animation-name: slideimage;
+  animation-duration: 2s;
+  position: relative;
+}
+.teamrow{
+text-align: justify;
+font-family: Tahoma, sans-serif;
+font-weight: 400;
+font-size: 1.3em;
+}
+.teamrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .teamcolumn {
+    width: 100%;
+  }
+  .teamrow{
+    height: 1600px;
+  }
+}
+.teamcolumn h2{
+  font-weight: 200;
+  color: #002366;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9;
+  padding-bottom: 9px;
+  text-align: center;
+  animation-name: slideimage;
+  animation-duration: 2s;
+}
+
+.teamcolumn h2:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100px;
+  background: #5DB2FF;
+  position: absolute;
+  left: 60%;
+  margin-left: -80px;
+}
+
+.flip-card img:hover{
+  transform: scale(1.2);
+}
+.flip-card:hover{
+  transform: scale(1.07);
+}
+.eventrow h2, .eventcolumn h2{
+  font-weight: 200;
+  color: #002366;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9;
+  padding-bottom: 9px;
+  text-align: center;
+  animation-name: slideimage;
+  animation-duration: 2s;
+  cursor: pointer;
+}
+
+.eventrow h2:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 150px;
+  background: #5DB2FF;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.eventcolumn {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  animation-name: slideimage;
+  animation-duration: 2s;
+  position: relative;
+}
+.eventrow{
+text-align: center;
+font-family: Tahoma, sans-serif;
+}
+.eventrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .eventcolumn {
+    width: 100%;
+  }
+  .eventrow{
+    height: 400px;
+  }
+  .carouselimage{
+    height: 250px; 
+  }
+      
+}
+.img-wrapper {
+  position: relative;
+  width: 100%;
+ }
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  height: 60%;
+}
+.cusrow h2, .cuscolumn h2{
+  font-weight: 200;
+  color: #002366;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9;
+  padding-bottom: 9px;
+  text-align: center;
+  animation-name: slideimage;
+  animation-duration: 2s;
+  cursor: pointer;
+}
+
+.cusrow h2:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 150px;
+  background: #5DB2FF;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.cuscolumn {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  animation-name: slideimage;
+  animation-duration: 2s;
+  position: relative;
+}
+.cusrow{
+font-weight: 400;
+font-size: 1.2em;
+text-align: center;
+font-family: Tahoma, sans-serif;
+}
+.cusrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .cuscolumn {
+    width: 100%;
+  }
+  .cusrow{
+    height: 800px;
+  }
+}
+
+.footer{
+  background-color: lightgrey;
+  height: auto;
+  color: black;
+  font-family: Tahoma, sans-serif;
+  font-size: 1.3em;
+  font-weight: 200;
+  text-align: center;
+  padding-top: 5px;
+}

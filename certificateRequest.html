@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+    <div class="header" style="height: auto; padding-bottom:0px;">
+        <div class="row">
+              <div class="col-sm-3">
+                <img src="images/iiitk.png" class="iiitklogo">
+              </div>
+              <div class="col-sm-6">
+                <div class="row heading">
+                  <p>&emsp;&nbsp;&nbsp;IEEE&nbsp;Student&nbsp;Branch</p>
+                </div>
+                <div class="row heading1">
+                  <p>&emsp;&emsp;&emsp;IIIT&nbsp;Kottayam</p>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <img src="images/ieee.png" class="ieeelogo">
+              </div>
+        </div>
+      <hr width="100%">
+    </div>            
+    <div class="container">
+        <h2>Certificate for the Event</h2>
+        <p>Some Instructions:</p>
+        <p>1. e-Certificates will be sent to the participants to their email address given below</p>
+        <form action="" method="POST">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="emailid">Email</label>
+                        <input type="email" class="form-control" id="emailid" name="email" placeholder="Your Email ID">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Model Certificate Image</h2>
+                </div>
+                <div class="col">
+                    <label for="query">Any Query:</label><br>
+                    <textarea name="query" id="query" cols="30" class="form-control" rows="10"></textarea>
+                </div>
+            </div><br><br>
+            <button type="submit" class="btn btn-outline-primary">Place a Request</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>
+        This site is designed by IEEE SB - IIIT Kottayam.  &#xa9; All Rights Reserved.
+        </p>
+      
+      </div>
+      
+</body>
+<script>
+var textWrapper = document.querySelector('.heading');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.heading .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 1500,
+    delay: (el, i) => 70*i
+  });
+  var textWrapper = document.querySelector('.heading1');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  
+  anime.timeline({loop: false})
+    .add({
+      targets: '.heading1 .letter',
+      scale: [4,1],
+      opacity: [0,1],
+      translateZ: 0,
+      easing: "easeOutExpo",
+      duration: 1500,
+      delay: (el, i) => 70*i
+    });
+
+    function Checktype(val){
+        var element=document.getElementById('othertype');
+        if(val=='Other')
+          element.style.display='block';
+        else  
+          element.style.display='none';
+    }
+    function Checkmem(val){
+        var element=document.getElementById('row_membership');
+        if(val=="ACM")
+        {
+            element.style.display='block';
+            document.getElementById('org_id').innerHTML="Enter the ACM Membership Number";
+        }
+        else if(val=="IEEE")
+        {
+            element.style.display='block';
+            document.getElementById('org_id').innerHTML="Enter the IEEE Membership Number";
+        }
+        else{
+            element.style.display='none';
+        }
+    }
+</script>    
+</html>
